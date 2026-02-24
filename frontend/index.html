@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temporary Manpower System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Temporary Manpower System</h1>
+    <p>Connect employers with temporary workers.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Authentication</h2>
+      <form id="auth-form">
+        <input id="name" placeholder="Name (for register)" />
+        <input id="email" placeholder="Email" required />
+        <input id="password" type="password" placeholder="Password" required />
+        <select id="role">
+          <option value="job_seeker">Job Seeker</option>
+          <option value="employer">Employer</option>
+          <option value="admin">Admin</option>
+        </select>
+        <div class="actions">
+          <button type="button" id="register-btn">Register</button>
+          <button type="button" id="login-btn">Login</button>
+        </div>
+      </form>
+      <p id="auth-status"></p>
+    </section>
+
+    <section class="card">
+      <h2>Job Search</h2>
+      <form id="filter-form">
+        <input id="filter-location" placeholder="Location" />
+        <input id="filter-min-salary" type="number" placeholder="Min Salary" />
+        <input id="filter-max-duration" type="number" placeholder="Max Duration (days)" />
+        <button type="submit">Search</button>
+      </form>
+      <div id="job-list"></div>
+    </section>
+
+    <section class="card hidden" id="employer-panel">
+      <h2>Employer Dashboard</h2>
+      <form id="job-form">
+        <input id="job-title" placeholder="Job Title" required />
+        <textarea id="job-description" placeholder="Description" required></textarea>
+        <input id="job-location" placeholder="Location" required />
+        <input id="job-duration" type="number" placeholder="Duration (days)" required />
+        <input id="job-salary" type="number" placeholder="Salary" required />
+        <input id="job-skills" placeholder="Required skills (comma separated)" />
+        <button type="submit">Post Job</button>
+      </form>
+    </section>
+
+    <section class="card hidden" id="job-seeker-panel">
+      <h2>Job Seeker Dashboard</h2>
+      <form id="profile-form">
+        <input id="availability" placeholder="Availability" />
+        <textarea id="experience" placeholder="Experience"></textarea>
+        <input id="profile-skills" placeholder="Skills (comma separated)" />
+        <button type="submit">Save Profile</button>
+      </form>
+      <button id="load-applications">Load My Applications</button>
+      <ul id="application-list"></ul>
+    </section>
+
+    <section class="card hidden" id="admin-panel">
+      <h2>Admin Dashboard</h2>
+      <button id="load-stats">Load Platform Stats</button>
+      <pre id="stats-output"></pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
