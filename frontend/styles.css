@@ -1,0 +1,62 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #f8fafc;
+}
+body {
+  margin: 0;
+}
+header {
+  background: #0f766e;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+form {
+  display: grid;
+  gap: 0.6rem;
+}
+input, textarea, select, button {
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+button {
+  background: #0f766e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #115e59;
+}
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.hidden {
+  display: none;
+}
+.job-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
